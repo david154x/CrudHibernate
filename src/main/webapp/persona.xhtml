@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Hola mundo desde Eclipse con JSF</title>
+</h:head>
+<h:body>
+	<h1>Hello World with JSF</h1>
+	<h:form>
+		<br />
+		<h:outputText value="Lista de transacciones Seekop" />
+		<h:commandLink style="float:left;">
+			<h:graphicImage id="imagenExcel" value="/resources/img/excel.png" title="Exportar datos a excel" style="width: 20px; height: 20px" />
+			<p:dataExporter type="xls" target="dtPersona" fileName="Lista - Personas" />
+		</h:commandLink>
+		<p:commandButton actionListener="#{personaMB.listar()}" value="Imprimir lista"  update="dtPersona"/>
+		<p:fieldset legend="Datos tabla persona">
+			<p:dataTable rendered="true" id="dtPersona" value="#{personaMB.listDePersonas}" var="persona">
+				<f:facet name="header">
+					<h:outputText value="Lista de transacciones Seekop" />
+					<h:commandLink style="float:left;">
+						<h:graphicImage id="imagenExcel" value="/resources/img/excel.png" title="Exportar datos a excel" style="width: 20px; height: 20px" />
+						<p:dataExporter type="xls" target="dtPersona" fileName="Lista - Personas" />
+					</h:commandLink>
+				</f:facet>
+				<p:column headerText="Primer nombre">
+					<p:outputLabel value="#{persona.nameOne}" />
+				</p:column>
+				<p:column headerText="Segundo nombre">
+					<p:outputLabel value="#{persona.nameTwo}" />
+				</p:column>
+				<p:column headerText="Primer apellido">
+					<p:outputLabel value="#{persona.lastNameOne}" />
+				</p:column>
+				<p:column headerText="Segundo apellido">
+					<p:outputLabel value="#{persona.lastNameTwo}" />
+				</p:column>
+				<p:column headerText="Genero">
+					<p:outputLabel value="#{persona.gender}" />
+				</p:column>
+				<p:column headerText="Fecha de nacimiento">
+					<p:outputLabel value="#{persona.dateOfBirth}" />
+				</p:column>
+			</p:dataTable>
+		</p:fieldset>
+	</h:form>
+</h:body>
+</html>
