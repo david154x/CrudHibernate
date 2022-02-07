@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Hola mundo desde Eclipse con JSF</title>
+</h:head>
+<h:body>
+	<ui:decorate template="/template/templateDashboard.xhtml">
+		<ui:define name="contenido">
+			<h4>Contenido que inserta el cliente en el template. #{userMB.usuario.usuario}</h4>
+		</ui:define>
+	</ui:decorate>	
+</h:body>
+</html>

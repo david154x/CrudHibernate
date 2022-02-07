@@ -1,13 +1,63 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelest" xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelest"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Hola mundo desde Eclipse con JSF</title>
+	<h:outputStylesheet library="css" name="index.css" />
 </h:head>
 <h:body>
-	<h1>Hola mundo con JSF</h1>
-	<h:form>
-		<p:commandLink action="persona" value="Persona" />
-	</h:form>
+	<section>
+		<header>
+			<a href="#" class="logo">Peces Tropicales</a>
+			<div class="toggle" onclick="toggleMenu();"></div>
+			<ul class="navigation">
+				<h:form>
+				<p:growl life="3000" showDetail="true" />
+				<li><a href="#" style="-i: 1;">Inicio</a></li>
+				<li><a href="#" style="-i: 2;">Galeria</a></li>
+				<li><p:commandLink styleClass="button" action="menu/menu?faces-redirect=true" value="Menu" update="@form" /></li>
+				<li><a href="#" style="-i: 4;">Contactenos</a></li>
+				<li><p:commandLink styleClass="button" action="login?faces-redirect=true" value="Ingresar" update="@form" />
+				</li>
+				</h:form>
+
+			</ul>
+		</header>
+		<div class="container">
+			<div class="box" style="-i: 3;">
+				<div class="imgBx">
+					<h:graphicImage library="img" name="img0.jpg" />
+				</div>
+			</div>
+			<div class="box" style="-i: 4;">
+				<div class="imgBx">
+					<h:graphicImage library="img" name="img1.jpg" />
+				</div>
+			</div>
+			<div class="box" style="-i: 5;">
+				<div class="imgBx">
+					<h:graphicImage library="img" name="img2.jpg" />
+				</div>
+			</div>
+			<div class="box" style="-i: 6;">
+				<div class="imgBx">
+					<h:graphicImage library="img" name="img3.jpg" />
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<ul class="sci">
+				<li><a href="#" style="-i: 9;">Facebook</a></li>
+				<li><a href="#" style="-i: 8;">Instagram</a></li>
+				<li><a href="#" style="-i: 7;">Youtube</a></li>
+			</ul>
+			<p class="copyrightText">Derechos reservados</p>
+		</div>
+	</section>
 </h:body>
+<h:outputScript library="js" name="example.js" />
 </html>

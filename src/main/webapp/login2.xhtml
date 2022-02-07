@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Hola mundo desde Eclipse con JSF</title>
+	<h:outputStylesheet library="css" name="login.css" />
+</h:head>
+<h:body>
+	<div id="contenedor">
+		<div id="formulario">
+			<h:form>
+				<p:growl id="msg" showDetail="true" showSummary="true" />
+				<p:panelGrid columns="1" styleClass="ui-panelgrid-blank">
+					<p:outputLabel value="#{msgs['usuarioForm.usuario']}" />
+					<p:inputText value="#{userMB.usuario.usuario}" />
+					<p:outputLabel value="#{msgs['usuarioForm.contrasena']}" />
+					<p:password value="#{userMB.usuario.contrasena}" />
+					<p:commandButton update="@form" icon="pi pi-key"
+					actionListener="#{userMB.iniciarSesion()}"
+					value="#{msgs['usuarioForm.iniciarSesion']}" />
+				</p:panelGrid>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

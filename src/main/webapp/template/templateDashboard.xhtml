@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Estas usando la plantilla del dashboard</title>
+	<h:outputStylesheet library="css" name="dashboard.css" />
+	<script src="http://kit.fontawesome.com/a076d05399.js" />
+	<f:event listener="#{templateMB.verificarSesion()}"
+		type="preRenderView" />
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:commandButton actionListener="#{templateMB.cerrarSesionMB()}"
+			icon="pi pi-sign-out" title="Cerrar sesion"
+			style="position: fixed; right:0.5%; top:0.5%; background: none; border:none;" />
+	</h:form>
+	<p:growl showDetail="true" life="6000" />
+	<div id="left">
+		<ui:insert name="left">
+			<h:form>
+				<p:sidebar widgetVar="sidebar1" baseZIndex="10000">
+					<h1>Peces Tropicales</h1>
+					<br />
+					<br />
+					<p:panelMenu model="#{menuMB.model}" />
+				</p:sidebar>
+				<p:commandButton icon="pi pi-bars"
+					style="background: none; border:none; position: absolute;"
+					type="button" onclick="PF('sidebar1').show()" styleClass="p-mr-2" />
+
+			</h:form>
+		</ui:insert>
+	</div>
+	<div id="content" class="left_content">
+		<ui:insert name="content"></ui:insert>
+	</div>
+</h:body>
+</html>
