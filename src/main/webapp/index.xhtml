@@ -12,18 +12,16 @@
 	<section>
 		<header>
 			<a href="#" class="logo">Peces Tropicales</a>
-			<div class="toggle" onclick="toggleMenu();"></div>
+			<div class="toggle" onclick="toggleMenu();" />
 			<ul class="navigation">
-				<h:form>
 				<p:growl life="3000" showDetail="true" />
+				<h:form id="form" >
 				<li><a href="#" style="-i: 1;">Inicio</a></li>
 				<li><a href="#" style="-i: 2;">Galeria</a></li>
-				<li><p:commandLink styleClass="button" action="menu/menu?faces-redirect=true" value="Menu" update="@form" /></li>
+				<li><p:commandLink styleClass="button" action="menu/menu?faces-redirect=true" value="Menu" /></li>
 				<li><a href="#" style="-i: 4;">Contactenos</a></li>
-				<li><p:commandLink styleClass="button" action="login?faces-redirect=true" value="Ingresar" update="@form" />
-				</li>
+				<li><p:commandLink styleClass="button" action="login?faces-redirect=true" value="Ingresar" /></li>
 				</h:form>
-
 			</ul>
 		</header>
 		<div class="container">

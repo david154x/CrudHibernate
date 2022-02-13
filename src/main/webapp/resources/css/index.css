@@ -79,11 +79,11 @@ header .toggle.active{
     visibility: visible;
 }
 
-.navigation li{
+.navigation li {
     list-style: none;
 }
 
-.navigation li a, .button{
+.navigation li a{
     text-decoration: none;
     font-size: 16px;
     margin: 0 20px;
